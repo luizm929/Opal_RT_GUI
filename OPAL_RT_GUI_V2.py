@@ -1,14 +1,10 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'E:\NMSU_Software_Projects\Relays_GUI\OPAL_RT_GUI_V2.ui'
-#
-# Created by: PyQt5 UI code generator 5.10
-#
-# WARNING! All changes made in this file will be lost!
+
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-class Ui_MainWindow(object):
+class Ui_Opal_RT_GUI(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1594, 794)
@@ -21,13 +17,13 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.layoutWidget)
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.currentPhasor = currentPhasor(self.layoutWidget)
+        self.currentPhasor = CurrentPhasor(self.layoutWidget)
         self.currentPhasor.setObjectName("currentPhasor")
         self.horizontalLayout_2.addWidget(self.currentPhasor)
-        self.voltagePhasor = voltagePhasor(self.layoutWidget)
+        self.voltagePhasor = VoltagePhasor(self.layoutWidget)
         self.voltagePhasor.setObjectName("voltagePhasor")
         self.horizontalLayout_2.addWidget(self.voltagePhasor)
-        self.xtraPlot = xtraPlot(self.layoutWidget)
+        self.xtraPlot = DynamicPhasor1(self.layoutWidget)
         self.xtraPlot.setObjectName("xtraPlot")
         self.horizontalLayout_2.addWidget(self.xtraPlot)
         self.layoutWidget1 = QtWidgets.QWidget(self.centralwidget)
@@ -811,6 +807,19 @@ class Ui_MainWindow(object):
         self.actionPlots.setText(_translate("MainWindow", "Faults"))
         self.actionLogin.setText(_translate("MainWindow", "Login"))
 
-from currentphasor import currentPhasor
-from voltagephasor import voltagePhasor
-from xtraplot import xtraPlot
+from phasor_plots import CurrentPhasor
+from phasor_plots import VoltagePhasor
+from phasor_plots import DynamicPhasor1
+
+import resources_rc
+
+if __name__ == "__main__":
+    import sys
+
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_Opal_RT_GUI()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
+

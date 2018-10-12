@@ -58,7 +58,7 @@ style.use('bmh')
 # TODO Fix the path problem (when we change HD program complains it cannot find files).
 cur_path = os.getcwd()
 std_path = cur_path[0:cur_path.index("\\") + 1]
-new_path = std_path + '\\NMSU_Software_Projects\\Relays_GUI\\'
+new_path = std_path + '\\NMSU_Software_Projects\\Opal_RT_GUI\\'
 flags = os.O_CREAT | os.O_EXCL | os.O_WRONLY
 
 try:
@@ -158,7 +158,7 @@ class CurrentPhasor(mplCanvas):
         self.axes.grid(True)
         #-----------------------------------------------------------------------
         # THis is the txt file we are going to read the values from.
-        with open(std_path + '\\NMSU_Software_Projects\\Relays_GUI\\readings.txt', 'r') as f:
+        with open(new_path + '\\readings.txt', 'r') as f:
             # d=list(f)
             d = f.readlines()
         #---------------------------------------------------------------------------
@@ -295,7 +295,7 @@ class VoltagePhasor(mplCanvas):
         # --------------------------------------------------------
 
         # THis is the txt file we are going to read the values from.
-        with open(std_path + '\\NMSU_Software_Projects\\Relays_GUI\\readings.txt', 'r') as f:
+        with open(new_path + '\\readings.txt', 'r') as f:
             d = f.readlines()
         f.close()
         # Below are the definitions of arrays that will store the values of txt file
@@ -387,7 +387,7 @@ class DynamicPhasor1(mplCanvas):
         # --------------------------------------------------------
 
         # THis is the txt file we are going to read the values from.
-        with open(std_path + '\\NMSU_Software_Projects\\Relays_GUI\\readings.txt', 'r') as f:
+        with open(new_path + '\\readings.txt', 'r') as f:
             d = f.readlines()
         f.close()
         # Below are the definitions of arrays that will store the values of txt file
