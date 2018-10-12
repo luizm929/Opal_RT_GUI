@@ -1,5 +1,5 @@
 NOTICE:
-This is not written by OPAL-RT Technologies. This is my own version without DNP3 communication code. Software is provided AS IS. 
+This is not written by OPAL-RT Technologies. This is my own version without DNP3 communication code. 
 
 
 This is part of a big project (smart grids). All parts work together however they are installed in different
